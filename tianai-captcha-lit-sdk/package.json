@@ -1,0 +1,44 @@
+{
+  "name": "tianai-captcha-lit-sdk",
+  "version": "0.1.0",
+  "description": "Lit + TypeScript frontend library for TianAi Captcha.",
+  "type": "module",
+  "module": "./dist/tianai-captcha-lit-sdk.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/tianai-captcha-lit-sdk.js"
+    },
+    "./src": "./src/index.ts"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "build": "vite build && tsc -p tsconfig.build.json --emitDeclarationOnly",
+    "prepublishOnly": "npm run typecheck && npm run test && npm run build"
+  },
+  "keywords": [
+    "captcha",
+    "lit",
+    "tianai"
+  ],
+  "license": "MulanPSL-2.0",
+  "peerDependencies": {
+    "lit": "^3.2.0"
+  },
+  "devDependencies": {
+    "@lit-labs/rollup-plugin-minify-html-literals": "^0.2.0",
+    "@types/node": "^20.14.12",
+    "jsdom": "^24.1.1",
+    "lit": "^3.2.0",
+    "typescript": "^5.5.4",
+    "vite": "^5.4.0",
+    "vitest": "^2.0.5"
+  }
+}
